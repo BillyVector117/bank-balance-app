@@ -72,7 +72,7 @@ export default function Home() {
   };
   useEffect(() => {
     manageTransactionsBySelectedMonth(selectedMonth)
-  }, [transactions])
+  }, [transactions, selectedMonth])
   // end region Transactions per month (all users)
 
 
@@ -165,7 +165,7 @@ export default function Home() {
       .flat();
 
     setWithDrawReport(nuevoReporte);
-  }, [clientsData, transactions,]);
+  }, []);
 
   // Manage chart and withdraw report
   const manageGenerateWithdrawReport = () => {
@@ -234,7 +234,7 @@ export default function Home() {
           {/* Client resume */}
           {selectedClient && (
             <div className="client-resume">
-              <h2>{selectedClient.name}'s Balance: <b>${selectedClient.balance.toLocaleString()}</b> </h2>
+              <h2>{selectedClient.name}&apos;s Balance: <b>${selectedClient.balance.toLocaleString()}</b> </h2>
               <h3 className="m-2"> <b>Your latest transactions:</b></h3>
               <div className="latest-transactions">
                 <ul>
@@ -259,7 +259,7 @@ export default function Home() {
           {/* Filter by date list */}
           {filteredTransactions.length > 0 && (
             <div className="filtered-client-transactios">
-              <h2>{selectedClient?.name}'s Transactions</h2>
+              <h2>{selectedClient?.name}&apos;s Transactions</h2>
               <h3 className="m-2"><b>From {getMonths(filteredDate[0])} {filteredDate[1]}:</b> </h3>
               <ul>
                 {filteredTransactions.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((mov, index) => (
@@ -279,7 +279,7 @@ export default function Home() {
           <section id="all-clients-monthly-transactions" className="flex flex-col justify-items-center">
             <div className="input-month align-middle self-center">
               <label >Select a month</label>
-              <input value={selectedMonth} defaultValue={"2024-07"} className="input" type="month" onChange={(event) => manageTransactionsBySelectedMonth(event.target.value)} />
+              <input value={selectedMonth} className="input" type="month" onChange={(event) => setSelectedMonth(event.target.value) /* manageTransactionsBySelectedMonth(event.target.value) */} />
 
             </div>
 
