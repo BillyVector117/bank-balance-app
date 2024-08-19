@@ -1,0 +1,352 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: radial-gradient(farthest-side ellipse at 10% 0, #212445 20%, #0a0c33);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.input {
+  color: #000;
+}
+
+
+/* Estilo base del input date */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007BFF;
+  margin-bottom: 5px;
+  display: block;
+  font-family: 'Arial', sans-serif;
+}
+
+input[type="month"] {
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+input[type="month"]:hover {
+  border-color: #0873e6;
+  background-color: #cfe6ff;
+}
+
+/* Efecto focus */
+input[type="month"]:focus {
+  border-color: #007BFF;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+}
+
+/* Estilo cuando el input está deshabilitado */
+input[type="month"]:disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Aumentar el tamaño del icono de calendario */
+input[type="month"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(50%);
+  height: 24px;
+  width: 24px;
+  margin-left: 5px;
+}
+
+h1 {
+  color: #007BFF;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+h2 {
+  color: #007BFF;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #007BFF;
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.error {
+  color: rgb(255, 0, 0);
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Estilos para la sección de clientes */
+ul li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 15px;
+  gap: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.clients-grid {
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 1rem;
+
+  ul li {
+    background-color: rgb(16 17 37);
+    color: #007bff;
+    font-size: larger;
+
+    .label-client-name {
+      width: 300px;
+      max-width: 300px;
+      min-width: 300px;
+    }
+  }
+}
+
+/* Estilos para la lista de movimientos */
+.movimientos-lista {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.movimientos-lista ul {
+  padding: 0;
+  list-style: none;
+}
+
+.movimientos-lista li {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.movimientos-lista li span {
+  font-weight: bold;
+}
+
+/* Estilos para los reportes */
+.reportes ul {
+  padding: 0;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.reportes li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  gap: 10px;
+}
+
+.reportes li span {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+/* .main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 45rem;
+  gap: 2rem;
+}
+ */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.client-resume {
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 1rem;
+}
+
+.latest-transactions {
+  max-height: 450px;
+  overflow: auto;
+  margin-bottom: 2rem;
+
+  li.withdraw {
+    background: #ff5860;
+    color: black;
+    font-weight: 700;
+  }
+
+  li.deposit {
+    background: #45ffb2;
+    font-weight: 700;
+    color: black;
+  }
+}
+
+.filtered-client-transactios {
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 1rem;
+
+  li.withdraw {
+    background: #ff5860;
+    color: black;
+    font-weight: 700;
+  }
+
+  li.deposit {
+    background: #45ffb2;
+    font-weight: 700;
+    color: black;
+  }
+}
+
+.transactions-by-month-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 110px;
+  gap: 20px;
+  justify-content: start;
+
+  li {
+    color: white;
+    cursor: pointer;
+    background: #2993ff;
+    font-weight: 700;
+    font-size: large;
+  }
+
+  li:hover {
+    background-color: #4775dd;
+    color: white;
+  }
+}
+
+.all-monthly-transactions {
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.withdraws-outside-section {
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.transaction-by-month-chart {
+  width: 125rem;
+}
+
+.label-transactions-by-month {
+  color: #007BFF;
+}
+
+.transaction-by-month-outside {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 110px;
+  gap: 20px;
+  justify-content: start;
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 1rem;
+
+  li {
+    color: #000;
+    cursor: pointer;
+    background: #ff667c;
+    font-weight: 700;
+    font-size: large;
+  }
+
+  li:hover {
+    background-color: #f34059;
+    color: white;
+  }
+}
